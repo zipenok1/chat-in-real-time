@@ -1,0 +1,15 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.wrap{
+    max-width: 1440px;
+    width: 90%;
+    margin: 0 auto;
+}
+.App{
+    margin-top: 80px;
+    display: flex;
+    justify-content: center;
+}
