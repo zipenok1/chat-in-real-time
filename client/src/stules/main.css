@@ -1,0 +1,38 @@
+.Main {
+    padding-top: 190px;
+}
+.containr{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.containr form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.title{
+    font-size: 60px;
+    color: #fff;
+}
+.field{
+    margin-top: 20px;
+    width: 380px;
+    height: 60px;
+    background-color: #d1d1d1;
+    border-radius: 12px;
+    border: none;
+    padding: 20px;
+    outline: none;
+}
+.butt{
+    margin-top: 20px;
+    width: 380px;
+    height: 60px;
+    border-radius: 12px;
+    border: none;
+    background-color: #3DE137;
+    font-size: 24px;
+    font-weight: 700;
+    color: #fff;
+}
