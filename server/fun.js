@@ -1,3 +1,3 @@
-const triStr = (str) => str.name.trim().toLowerCase();
+const trimStr = (str) => str.trim().toLowerCase();
 
-module.exports = triStr
+exports.trimStr = trimStr

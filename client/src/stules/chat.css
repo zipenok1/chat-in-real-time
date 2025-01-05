@@ -37,8 +37,8 @@
 }
 .chat__body img {
     margin-top: 10px;
-    width: 480px;
-    height: 380px;
+    width: 0px;
+    height: 240px;
 }
 .chat__top button{
     background-color: red;
@@ -78,11 +78,7 @@
     border: none;
     border-radius: 12px;
 }
-.hi{
+.hi{ 
     font-size: 20px;
     color: #fff;
-}
-.body__hui{
-    width: 200px;
-    height: 25px;
 }

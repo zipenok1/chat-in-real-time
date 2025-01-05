@@ -28,17 +28,17 @@ function Chat() {
       <div className="chat__box">
         <div className="chat__top">
           <h2>{params.room}</h2>
-          <p>{params.name} is in the room</p>
+          <p>is in the room</p>
           <Link to={`/`}>
           <button>get out</button>
           </Link>  
         </div>
           <div className="chat__body">
-            {/* <div className="body__hui"> 
+            <div className="body__hui"> 
             {state.map(({message}) =>
                 <span className="hi">{message}</span>
               )}
-              </div> */}
+              </div>
             <img src={tit} alt="tit" />
           </div>
             <div className="chat__bot">
