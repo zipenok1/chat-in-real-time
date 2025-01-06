@@ -18,32 +18,40 @@
     padding: 40px;
 }
 .chat__top h2{
-    color: #fff;
+    color: #cccccc;
     font-size: 26px;
     font-weight: bold; 
 }
 .chat__top p{
     font-size: 20px;
-    color: #EBE8E8;
+    font-weight: 600;
+    color: #cccccc;
 }
 .chat__body{
+    overflow: auto;
     background-color: #303030;
     width: 1220px;
     height: 460px;
+    padding:0 20px;
     display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
 }
+::-webkit-scrollbar {
+    width: 8px;
+    background-color: #59595a;
+}
+::-webkit-scrollbar-thumb {
+    border-radius: 10px;
+    background-color: #9b9b9b;
+  }
 .chat__body img {
     margin-top: 10px;
-    width: 0px;
+    width: 340px;
     height: 240px;
 }
 .chat__top button{
-    background-color: red;
+    background-color: rgb(190, 0, 0);
     color: #fff;
-    font-size: 20px;
+    font-size: 18px;
     padding: 10px 20px;
     border: none;
     border-radius: 12px;
@@ -60,17 +68,17 @@
     padding: 40px;
 }
 
-.chat__bot input{
+.ca{
     padding: 0 10px;
     width: 700px;
     height: 25px;
     background: none;
     border: none;
-    border-bottom: 2px solid rgb(104, 104, 104);
     outline: none; 
     color: #fff;  
+    font-size: 18px;
 }
-.chat__bot button{
+.sumbt{
     background-color: #303030;
     color: #fff;
     font-size: 18px;
@@ -78,7 +86,4 @@
     border: none;
     border-radius: 12px;
 }
-.hi{ 
-    font-size: 20px;
-    color: #fff;
-}
+

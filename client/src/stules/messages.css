@@ -1,0 +1,12 @@
+.user{ 
+    margin-top: 20px;
+    padding: 10px;
+    background-color: rgb(86, 86, 86);
+    border-radius: 12px;
+    font-size: 18px;
+    color: rgb(201, 201, 201);
+}
+.text{ 
+    color: #ffffff;
+}
+
