@@ -1,6 +1,6 @@
 import React from "react";
 import AppRoutes from "./AppRoutes";
-import '../stules/app.css'
+import '../stules/App.css'
 
 function App() {
   return (

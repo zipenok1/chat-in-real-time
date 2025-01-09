@@ -1,7 +1,7 @@
 import React from "react";
 import '../stules/messages.css'
 
-function Messages({messages, name}) {
+function Messages({messages}) {
     return (
         <div className="messages">
             {messages.map(({user, message}, i) =>{
