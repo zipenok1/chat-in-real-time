@@ -55,6 +55,7 @@
     padding: 10px 20px;
     border: none;
     border-radius: 12px;
+    cursor: pointer;
 }
 .chat__bot{
     bottom: 0;
@@ -85,4 +86,5 @@
     padding: 12px 30px;
     border: none;
     border-radius: 12px;
+    cursor: pointer;
 }

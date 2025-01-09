@@ -1,5 +1,5 @@
 .Main {
-    padding-top: 280px;
+    padding-top: 31vh;
 }
 .containr{
     display: flex;
@@ -35,4 +35,5 @@
     font-size: 24px;
     font-weight: 700;
     color: #fff;
+    cursor: pointer;
 }
