@@ -1,73 +1,79 @@
 import React, { useEffect, useState } from "react";
-import io from 'socket.io-client'
-import { data, Link, useLocation } from "react-router-dom";
+import io from 'socket.io-client';
+import { Link, useLocation } from "react-router-dom";
 import '../stules/chat.css'
-import tit from '../imeges/prank2.gif'
 import Messages from "./Messages";
-const socket = io.connect("http://localhost:5000")
+
+const socket = io.connect("http://localhost:5000");
 
 function Chat() {
   const { search } = useLocation();
-  const [params, setParams] = useState({  user:'', room:''  }); 
-  const [state, setState] = useState([])
-  const [message, setMessage] = useState('')
+  const [params, setParams] = useState({ user: '', room: '' }); 
+  const [messages, setMessages] = useState([]);
+  const [message, setMessage] = useState('');
 
-  useEffect(()=>{
+  useEffect(() => {
     const searchParams = Object.fromEntries(new URLSearchParams(search));
     setParams(searchParams);   
     socket.emit("join", searchParams);
-  },[search])
+  }, [search]);
  
-  useEffect(()=>{
-    socket.on('message', ({data})=>{
-      setState((_state)=> ([..._state, data]))
-    })
-  }, [])
+  useEffect(() => {
+    socket.on('message', ({ data }) => {
+      setMessages(prevMessages => [...prevMessages, data]);
+    });
+
+    return () => {
+      socket.off('message');
+    };
+  }, []);
   
-  const hendlhe = ({target: {value}}) => {
-    setMessage(value)
-  }
-  const hendSomni = (e) => {
-    e.preventDefault()
-    if(!message) return;
+  const handleChange = ({ target: { value } }) => {
+    setMessage(value);
+  };
 
-    socket.emit('sendMessage', {message, params})
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    if (!message.trim()) return;
 
-    setMessage('')
-  }
+    socket.emit('sendMessage', { message, params });
+    setMessage('');
+  };
+
   return (
-    <div className="Chat">
-      <div className="chat__box">
-        <div className="chat__top">
-          <h2>{params.room}</h2>
-          <p>ZipChat</p>
-          <Link to={`/`}>
-          <button>Выйти</button>
-          </Link>  
-        </div>
-          <div className="chat__body">
-            <div className="body__hui"> 
-              <Messages messages={state} name={params.name}/>
-            </div>
-            {/* <img src={tit} alt="tit" /> */}
+    <div className="chat-container">
+      <div className="chat-window">
+        <header className="chat-header">
+          <div className="room-info">
+            <h2 className="room-name">ZipChat</h2>
+            <span className="app-name">room: {params.room}</span>
           </div>
-            <div className="chat__bot">
-              <input className="ca"
-                type="text" 
-                name="message"
-                placeholder="Введите сообщение"
-                value={message}
-                autoComplete="off"
-                onChange={hendlhe}
-                required
-              />
-              <form onSubmit={hendSomni}>
-              <input className="sumbt"
-                type="submit" 
-                value='Отправить' 
-                onSubmit={hendSomni}/>
-              </form>
-            </div>
+          <Link to="/" className="exit-button">
+            Выйти
+          </Link>  
+        </header>
+        
+        <main className="chat-messages">
+          <Messages messages={messages} name={params.name} />
+        </main>
+        
+        <footer className="chat-input">
+          <form onSubmit={handleSubmit} className="message-form">
+            <input
+              type="text" 
+              name="message"
+              placeholder="Введите сообщение..."
+              value={message}
+              autoComplete="off"
+              onChange={handleChange}
+              required
+              className="message-input"
+            />
+            <button type="submit" className="send-button">
+              Отправить
+            </button>
+          </form>
+        </footer>
       </div>
     </div>
   );

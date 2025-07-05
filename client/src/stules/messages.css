@@ -1,12 +1,14 @@
 .user{ 
-    margin-top: 20px;
+    margin-top: 10px;
     padding: 10px;
-    background-color: rgb(86, 86, 86);
-    border-radius: 12px;
+    background-color: #fff;
+    border-radius: 8px;
     font-size: 18px;
-    color: rgb(201, 201, 201);
+    color: rgb(0, 0, 0);
+    box-shadow: 0px 3px 4px 1px rgba(0, 0, 0, 0.050);
 }
 .text{ 
-    color: #ffffff;
+    margin-top: 5px;
+    color: #505050;
 }
 
